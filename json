@@ -1,0 +1,24 @@
+{
+  "comments": [
+    {
+      "pattern": "function burn\\(uint256 amount\\) external nonReentrant",
+      "comment": "Consider validating that `amount > 0` to avoid zero-value burns, which are no-ops but still create unnecessary transactions."
+    },
+    {
+      "pattern": "const CONTRACT_ADDRESS = \"YOUR_DEPLOYED_CONTRACT_ADDRESS\";",
+      "comment": "Externalize this to an environment variable for better security and flexibility across environments."
+    },
+    {
+      "pattern": "const init = async \\(\\) => {",
+      "comment": "Check if `window.ethereum` exists before initializing, to avoid errors on non-EVM browsers."
+    },
+    {
+      "pattern": "await tx.wait\\(\\);",
+      "comment": "Consider using try/catch to handle errors gracefully and give user feedback if transaction fails."
+    },
+    {
+      "pattern": "await prov.send\\(\"eth_requestAccounts\", \\[\\]\\);",
+      "comment": "Prompting for wallet connection should be user-triggered (e.g., on a button click) rather than on page load."
+    }
+  ]
+}
